@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- Meta --}}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- CDN & STYLE --}}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet">
+    {{!-- Scripts --}}
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Productos</title>
+    <script src="/js/index.js"></script>
+</head>
+
+<body>
+    
+  <main class="container-fluid">
+  <section class="container">
+
+{{!-- FORM  --}}
+
+<form method="post" action="/api/productos/guardar" class="container formulario" target="hiddenFrame">
+    <h1>Nuevo Productos</h1>
+        <div class="formGroup">
+            <label for="titleGuardar">Nombre</label>
+            <input type="text" id="titleGuardar" name="title" required>
+        </div>
+        <div class="formGroup">
+            <label for="price">Precio</label>
+            <input type="number" id="price" name="price" min="0" required>
+        </div>
+        <div class="formGroup">
+            <label for="thumbnail">Imagen URL</label>
+            <input type="url" id="thumbnail" name="thumbnail">
+        </div>
+        <button type="submit" id="btn">CREAR</button>
+        <button type="submit" id="send">PUSH TO DB</button>
+
+</form>
+
+{{!-- PRODUCTS LIST --}}
+
+<hr>
+<div class="container title"><h2>Productos disponibles</h2></div>
+    <table class="table container" id="myTable">
+        <thead>
+            <tr class="table-titles container">
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+    </table>
+      </section>
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+    <div id="chat-container">
+        <div id="chat-window">
+        <div id="output"></div>
+        <div id="actions"></div>
+        </div>
+        <input type="email" placeholder="email" id="username" required>
+        <input type="text" placeholder="Mensaje" id="message">
+        <button id="button">Enviar</button>
+        <button id="savedb">Save</button>
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">const mytable = '<table><tr><th>Nombre</th><th>Precio</th><th>Imagen</th></tr><br><tr> <td> <ul style="color: #fff"></ul></td></tr></table>'</script>  
+</body>
+</html>

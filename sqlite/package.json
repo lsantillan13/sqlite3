@@ -1,0 +1,16 @@
+{
+    "name": "sqlite",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: error"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "knex": "^0.95.11",
+        "sqlite3": "^5.0.2"
+    }
+}
